@@ -1,0 +1,17 @@
+uuid: 09201b3b-76c6-4e9c-9c2d-213da4992366
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Group
+type: group
+description: null
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

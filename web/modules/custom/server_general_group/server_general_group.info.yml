@@ -1,0 +1,9 @@
+name: "Server General Group"
+description: "Group-specific functionality for Server General module"
+type: module
+core_version_requirement: ^9 || ^10
+package: "server"
+dependencies:
+  - server_general:server_general
+  - og:og
+  - pluggable_entity_view_builder:pluggable_entity_view_builder

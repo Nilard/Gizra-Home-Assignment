@@ -1,0 +1,13 @@
+uuid: 0d71ae61-6a07-4da3-80f6-f51acc7239de
+langcode: en
+status: true
+dependencies:
+  module:
+    - og
+_core:
+  default_config_hash: QF_8W18hb0Rg2z7yI_6w39-S-KBqqF2CabwsNZ_Xbig
+id: og_membership_approve_pending_action
+label: 'Approve the pending membership(s)'
+type: og_membership
+plugin: og_membership_approve_pending_action
+configuration: {  }

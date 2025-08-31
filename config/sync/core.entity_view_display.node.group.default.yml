@@ -1,0 +1,29 @@
+uuid: 696e2f05-07e9-4d97-b887-4f849cee1469
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.group
+  module:
+    - og
+    - user
+id: node.group.default
+targetEntityType: node
+bundle: group
+mode: default
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  og_group:
+    type: og_group_subscribe
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
