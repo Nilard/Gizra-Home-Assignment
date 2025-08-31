@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Person cards grid component template.
+ *
+ * Available variables:
+ * - items: Array of person card render arrays
+ */
+#}
+
+<div class="person-cards-grid">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-8">
+    {% for item in items %}
+      <div class="person-card-wrapper">
+        {{ item }}
+      </div>
+    {% endfor %}
+  </div>
+</div>

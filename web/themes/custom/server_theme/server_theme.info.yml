@@ -10,6 +10,7 @@ libraries:
   - server_theme/font-awesome
   - server_theme/opensans
   - server_theme/roboto
+  - server_theme/inter
 
 logo: logo.svg
 
