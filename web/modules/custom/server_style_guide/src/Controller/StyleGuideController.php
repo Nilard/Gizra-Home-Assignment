@@ -213,6 +213,12 @@ class StyleGuideController extends ControllerBase {
     $element = $this->getWebformElement();
     $build[] = $this->wrapElementNoContainer($element, 'Element: Webform');
 
+    $element = $this->getPersonCard();
+    $build[] = $this->wrapElementWideContainer($element, 'Person card');
+
+    $element = $this->getPersonCardsGrid();
+    $build[] = $this->wrapElementWideContainer($element, 'Person cards grid (10 cards)');
+
     return $build;
   }
 
@@ -934,6 +940,124 @@ class StyleGuideController extends ControllerBase {
       $this->getRandomTitle(),
       $this->buildProcessedText('Decorate one package of cauliflower in six teaspoons of plain vinegar. Try flavoring the crême fraîche gingers with clammy rum and fish sauce, simmered.'),
     );
+  }
+
+  /**
+   * Get a single Person card element.
+   *
+   * @return array
+   *   The render array.
+   */
+  protected function getPersonCard(): array {
+    return [
+      '#theme' => 'server_theme_person_card',
+      '#image_url' => $this->getPlaceholderPersonImage(128),
+      '#title' => 'Jane Cooper',
+      '#detail' => 'Paradigm Representative',
+      '#badge' => 'Admin',
+      '#email' => 'jane.cooper@example.com',
+      '#phone' => '+1-202-555-0176',
+    ];
+  }
+
+  /**
+   * Get a grid of 10 Person cards.
+   *
+   * @return array
+   *   The render array.
+   */
+  protected function getPersonCardsGrid(): array {
+    $items = [];
+
+    $persons = [
+      [
+        'title' => 'John Doe',
+        'detail' => 'Acme Solutions Architect',
+        'badge' => 'Admin',
+        'email' => 'john.doe@example.com',
+        'phone' => '+1-202-555-0176',
+      ],
+      [
+        'title' => 'Jane Smith',
+        'detail' => 'Globex Marketing Lead',
+        'badge' => 'Manager',
+        'email' => 'jane.smith@example.com',
+        'phone' => '+1-202-555-0177',
+      ],
+      [
+        'title' => 'Mike Johnson',
+        'detail' => 'Initech Manager',
+        'badge' => 'HR',
+        'email' => 'mike.johnson@example.com',
+        'phone' => '+1-202-555-0178',
+      ],
+      [
+        'title' => 'Sarah Wilson',
+        'detail' => 'Umbrella HR Specialist',
+        'badge' => 'Engineer',
+        'email' => 'sarah.wilson@example.com',
+        'phone' => '+1-202-555-0179',
+      ],
+      [
+        'title' => 'David Brown',
+        'detail' => 'Hooli Engineer',
+        'badge' => 'Director',
+        'email' => 'david.brown@example.com',
+        'phone' => '+1-202-555-0180',
+      ],
+      [
+        'title' => 'Lisa Davis',
+        'detail' => 'Stark Operations Director',
+        'badge' => 'Scientist',
+        'email' => 'lisa.davis@example.com',
+        'phone' => '+1-202-555-0181',
+      ],
+      [
+        'title' => 'Tom Miller',
+        'detail' => 'Wayne Financial Analyst',
+        'badge' => 'Consultant',
+        'email' => 'tom.miller@example.com',
+        'phone' => '+1-202-555-0182',
+      ],
+      [
+        'title' => 'Amy Garcia',
+        'detail' => 'Wonka Creative Strategist',
+        'badge' => 'Analyst',
+        'email' => 'amy.garcia@example.com',
+        'phone' => '+1-202-555-0183',
+      ],
+      [
+        'title' => 'Chris Rodriguez',
+        'detail' => 'Soylent Research Scientist',
+        'badge' => 'Strategist',
+        'email' => 'chris.rodriguez@example.com',
+        'phone' => '+1-202-555-0184',
+      ],
+      [
+        'title' => 'Emma Martinez',
+        'detail' => 'Cyberdyne Security Consultant',
+        'badge' => 'Specialist',
+        'email' => 'emma.martinez@example.com',
+        'phone' => '+1-202-555-0185',
+      ],
+    ];
+
+    foreach ($persons as $key => $person) {
+      $items[] = [
+        '#theme' => 'server_theme_person_card',
+        '#image_url' => $this->getPlaceholderPersonImage(128),
+        '#title' => $person['title'],
+        '#detail' => $person['detail'],
+        '#badge' => $person['badge'],
+        '#email' => $person['email'],
+        '#phone' => $person['phone'],
+      ];
+    }
+
+    return [
+      '#theme' => 'server_theme_person_cards_grid',
+      '#items' => $items,
+    ];
   }
 
 }

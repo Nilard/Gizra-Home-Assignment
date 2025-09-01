@@ -511,6 +511,23 @@ function server_theme_theme() {
     'variables' => [],
   ];
 
+  $info['server_theme_person_card'] = [
+    'variables' => [
+      'image_url' => '',
+      'title' => '',
+      'detail' => '',
+      'badge' => '',
+      'email' => '',
+      'phone' => '',
+    ],
+  ];
+
+  $info['server_theme_person_cards_grid'] = [
+    'variables' => [
+      'items' => [],
+    ],
+  ];
+
   return $info;
 }
 
